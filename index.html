@@ -10,7 +10,7 @@
       border-radius: 50%;
       background: yellow;
       position: relative;
-      -webkit-animation-name: example; /* For Safari versions from 4.0 to 8.0 */
+      -webkit-animation-name: example; /* Supporting Safari versions 4-8 */
       -webkit-animation-duration: 10s;
       -webkit-animation-iteration-count: 1s;/* Safari 4.0 - 8.0 */
       animation-name: example;
@@ -18,22 +18,26 @@
       animation-iteration-count: 1s;
       -webkit-transition: width 10s, height 6s;
       transition: width 10s, height 6s;
-      -webkit-animation-name: roundandround;
-      animation-name: roundandround;
+      -webkit-animation-name: flipflop;
+      animation-name: flipflop;
       }
     
     #circle:hover {
     animation-duration: 5s;
     -webkit-animation-duration: 5s;
+    width: 225px;
+    height: 225px;
+    -ms-transform: scale(1, 2);
+    -webkit-transform: scale(1, 2);
+    transform: scale(1, 2);
+    -webkit-animation-name: colorchange;
+    animation-name: colorchange;
+    -webkit-animation-name: flipflop;
+    animation-name: colorchange flipflop;
     animation-iteration-count: infinite;
-    width: 500px;
-    height: 500px;
-    -ms-transform: scale(1, 4);
-    -webkit-transform: scale(1, 4);
-    transform: scale(1, 4);
     }
     
-    @-webkit-keyframes example {
+    @-webkit-keyframes colorchange {
     0%   {background-color:yellow; left:0px; top:0px;}
     25%  {background-color:black; left:500px; top:0px;}
     50%  {background-color:blue; left:500px; top:500px;}
@@ -41,7 +45,7 @@
     100% {background-color:gray; left:0px; top:0px;}
 }
 
-@keyframes example {
+@keyframes colorchange {
     0%   {background-color:yellow; left:0px; top:0px;}
     25%  {background-color:black; left:500px; top:0px;}
     50%  {background-color:blue; left:500px; top:500px;}
@@ -49,13 +53,13 @@
     100% {background-color:gray; left:0px; top:0px;}
 }
 
-@keyframes roundandround {
+@keyframes flipflop {
   to {
     transform: rotateX(360deg) rotateY(360deg);
   }
 }
 
-@-webkit-keyframes roundandround {
+@-webkit-keyframes flipflop {
   to {
     transform: rotateX(360deg) rotateY(360deg);
   }

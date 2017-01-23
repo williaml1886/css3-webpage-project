@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      background-color: blue;
+    }
+    #circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: yellow;
+      position: relative;
+      -webkit-animation-name: example; /* For Safari versions from 4.0 to 8.0 */
+      -webkit-animation-duration: 10s;
+      -webkit-animation-iteration-count: 1s;/* Safari 4.0 - 8.0 */
+      animation-name: example;
+      animation-duration: 10s;
+      animation-iteration-count: 1s;
+      -webkit-transition: width 10s, height 6s;
+      transition: width 10s, height 6s;
+      -webkit-animation-name: roundandround;
+      animation-name: roundandround;
+      }
+    
+    #circle:hover {
+    animation-duration: 5s;
+    -webkit-animation-duration: 5s;
+    animation-iteration-count: infinite;
+    width: 500px;
+    height: 500px;
+    -ms-transform: scale(1, 4);
+    -webkit-transform: scale(1, 4);
+    transform: scale(1, 4);
+    }
+    
+    @-webkit-keyframes example {
+    0%   {background-color:yellow; left:0px; top:0px;}
+    25%  {background-color:black; left:500px; top:0px;}
+    50%  {background-color:blue; left:500px; top:500px;}
+    75%  {background-color:purple; left:0px; top:500px;}
+    100% {background-color:gray; left:0px; top:0px;}
+}
+
+@keyframes example {
+    0%   {background-color:yellow; left:0px; top:0px;}
+    25%  {background-color:black; left:500px; top:0px;}
+    50%  {background-color:blue; left:500px; top:500px;}
+    75%  {background-color:purple; left:0px; top:500px;}
+    100% {background-color:gray; left:0px; top:0px;}
+}
+
+@keyframes roundandround {
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes roundandround {
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+#grad {
+    background: blue;
+    background: -webkit-linear-gradient(left top, blue, white);
+    background: -o-linear-gradient(bottom right, blue, white);
+    background: -moz-linear-gradient(bottom right, blue, white);
+    background: linear-gradient(bottom right, blue, white);
+}
+
+  </style>
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS3 Webpage</title>
+    <link href="style.css" type="text/css">
+  </head>
+  <body>
+     <div id="circle"></div>
+  </body>
+</html>
